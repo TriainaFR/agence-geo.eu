@@ -14,7 +14,7 @@ export default function SeoPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
       <div className="mb-10">
-        <h1 className="text-3xl font-semibold tracking-tight">SEO</h1>
+        <h1 className="font-display text-4xl font-medium tracking-tight">SEO</h1>
         <p className="mt-2 max-w-xl text-muted">
           Référencement naturel : critères de choix, méthodologie et
           comparatifs d&apos;agences.

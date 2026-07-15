@@ -14,7 +14,7 @@ export default function BlogIndexPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
       <div className="mb-10">
-        <h1 className="text-3xl font-semibold tracking-tight">Blog</h1>
+        <h1 className="font-display text-4xl font-medium tracking-tight">Blog</h1>
         <p className="mt-2 max-w-xl text-muted">
           Tous nos articles et guides sur le SEO, le GEO et le SEA.
         </p>

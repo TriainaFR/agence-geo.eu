@@ -2,13 +2,14 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #f7f8fb;
-  --foreground: #12141a;
-  --muted: #5b6472;
-  --border: #e4e7ec;
-  --surface: #ffffff;
+  --background: #f6f5f1;
+  --foreground: #191821;
+  --muted: #6a6774;
+  --border: #e6e3dc;
+  --surface: #fdfcfa;
   --accent: #4338ca;
-  --accent-soft: #eef0fd;
+  --accent-soft: #edecf9;
+  --ink-rule: #d8d4cb;
 }
 
 @theme inline {
@@ -19,19 +20,22 @@
   --color-surface: var(--surface);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-ink-rule: var(--ink-rule);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0b0c10;
-    --foreground: #e7e9ee;
-    --muted: #9aa3b2;
-    --border: #22262f;
-    --surface: #131519;
-    --accent: #818cf8;
-    --accent-soft: #1b1c3a;
+    --background: #0e0d12;
+    --foreground: #ebe8e2;
+    --muted: #9d99a6;
+    --border: #262430;
+    --surface: #16141c;
+    --accent: #8f94f3;
+    --accent-soft: #1e1c36;
+    --ink-rule: #322f3d;
   }
 }
 
@@ -39,6 +43,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Editorial display headings */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.015em;
+}
+
+/* Subtle film grain overlay (hero atmosphere) */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @keyframes float-slow {
@@ -57,4 +78,18 @@ body {
 
 .animate-float-slower {
   animation: float-slower 16s ease-in-out infinite;
+}
+
+/* Link underline sweep on hover */
+.link-sweep {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-sweep:hover,
+.group:hover .link-sweep {
+  background-size: 100% 1.5px;
 }

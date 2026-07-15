@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { href: "/geo", label: "GEO" },
   { href: "/sea", label: "SEA" },
   { href: "/localisation", label: "Par localisation" },
+  { href: "/notre-histoire-objectif", label: "Notre histoire" },
 ];
 
 export function Header() {
@@ -28,8 +29,8 @@ export function Header() {
               unoptimized
             />
           </span>
-          <span className="text-base font-semibold tracking-tight">
-            Agence-Geo<span className="text-accent">.eu</span>
+          <span className="font-display text-lg font-medium tracking-tight">
+            Agence-Geo<span className="italic text-accent">.eu</span>
           </span>
         </Link>
 

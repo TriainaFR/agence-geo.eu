@@ -14,7 +14,7 @@ export default function SeaPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
       <div className="mb-10">
-        <h1 className="text-3xl font-semibold tracking-tight">SEA</h1>
+        <h1 className="font-display text-4xl font-medium tracking-tight">SEA</h1>
         <p className="mt-2 max-w-xl text-muted">
           Publicité en ligne : gestion de campagnes Google Ads, Meta et
           LinkedIn, et comparatifs d&apos;agences.

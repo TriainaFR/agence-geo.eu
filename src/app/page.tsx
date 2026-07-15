@@ -173,102 +173,155 @@ export default function Home() {
       {/* Mission */}
       <section
         aria-labelledby="positioning-title"
-        className="mx-auto max-w-6xl px-6 py-14"
+        className="mx-auto max-w-6xl px-6 py-20 sm:py-24"
       >
-        <h2
-          id="positioning-title"
-          className="text-xl font-semibold tracking-tight"
-        >
-          Notre mission
-        </h2>
-        <div className="mt-6 rounded-2xl border border-border bg-surface p-6 sm:p-8">
-          <p className="text-base leading-relaxed">
-            Analyses, comparatifs et actualités sur le{" "}
-            <strong>référencement naturel</strong>, l&apos;
-            <strong>optimisation pour les moteurs génératifs</strong> (GEO), et
-            les <strong>agences par région</strong>.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted">
-            Nous vous aidons à évaluer sérieusement les prestataires en
-            marketing digital, sans parti pris commercial. Nos classements et
-            guides sont basés sur des critères objectifs et des retours
-            d&apos;expérience vérifiés.
-          </p>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[220px_1fr] md:gap-16">
+          <div className="flex items-start gap-3 md:flex-col md:gap-4">
+            <span
+              aria-hidden="true"
+              className="font-display text-sm italic text-accent"
+            >
+              01
+            </span>
+            <h2
+              id="positioning-title"
+              className="font-display text-2xl font-medium tracking-tight sm:text-3xl"
+            >
+              Notre mission
+            </h2>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6 sm:pl-8">
+            <p className="text-lg leading-relaxed sm:text-xl">
+              Analyses, comparatifs et actualités sur le{" "}
+              <strong>référencement naturel</strong>, l&apos;
+              <strong>optimisation pour les moteurs génératifs</strong> (GEO),
+              et les <strong>agences par région</strong>.
+            </p>
+            <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
+              Nous vous aidons à évaluer sérieusement les prestataires en
+              marketing digital, sans parti pris commercial. Nos classements et
+              guides sont basés sur des critères objectifs et des retours
+              d&apos;expérience vérifiés.
+            </p>
+          </div>
         </div>
       </section>
+
+      <div aria-hidden="true" className="mx-auto max-w-6xl px-6">
+        <hr className="border-ink-rule" />
+      </div>
 
       {/* Classements */}
       <section
         aria-labelledby="rankings-title"
-        className="mx-auto max-w-6xl px-6 pb-14"
+        className="mx-auto max-w-6xl px-6 py-20 sm:py-24"
       >
-        <h2 id="rankings-title" className="text-xl font-semibold tracking-tight">
-          Classements et comparatifs
-        </h2>
+        <div className="flex items-baseline gap-3 sm:gap-4">
+          <span
+            aria-hidden="true"
+            className="font-display text-sm italic text-accent"
+          >
+            02
+          </span>
+          <h2
+            id="rankings-title"
+            className="font-display text-2xl font-medium tracking-tight sm:text-3xl"
+          >
+            Classements et comparatifs
+          </h2>
+        </div>
 
-        <h3 className="mt-8 text-sm font-medium uppercase tracking-wide text-muted">
+        <h3 className="mt-12 text-xs font-medium uppercase tracking-[0.2em] text-muted">
           Par spécialité
         </h3>
-        <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {SPECIALITES.map((item) => (
+        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {SPECIALITES.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
               title={`Consulter le classement des ${item.title.toLowerCase()}`}
-              className="group flex flex-col gap-3 rounded-2xl border border-border bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+              <span
+                aria-hidden="true"
+                className="font-display absolute -right-2 -top-5 select-none text-7xl font-semibold italic text-accent/[0.07] transition-transform duration-500 group-hover:scale-110"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
                 <item.icon size={20} />
               </span>
-              <strong className="text-lg font-semibold tracking-tight transition-colors group-hover:text-accent">
-                {item.title}
+              <strong className="font-display text-xl font-medium tracking-tight">
+                <span className="link-sweep">{item.title}</span>
               </strong>
-              <span className="text-sm text-muted">{item.description}</span>
+              <span className="text-sm leading-relaxed text-muted">
+                {item.description}
+              </span>
+              <span
+                aria-hidden="true"
+                className="mt-auto text-sm text-accent opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+              >
+                →
+              </span>
             </Link>
           ))}
         </div>
 
-        <h3 className="mt-10 text-sm font-medium uppercase tracking-wide text-muted">
+        <h3 className="mt-14 text-xs font-medium uppercase tracking-[0.2em] text-muted">
           Par localisation
         </h3>
-        <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {LOCALISATIONS.map((item) => (
             <Link
               key={item.title}
               href={item.href}
               title={item.description}
-              className="group flex items-start gap-4 rounded-2xl border border-border bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
+              className="group flex items-start gap-5 rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 transition-transform duration-300 group-hover:scale-110 dark:text-amber-400">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 dark:text-amber-400">
                 <MapPin size={20} />
               </span>
-              <span className="flex flex-col gap-1">
-                <strong className="text-lg font-semibold tracking-tight transition-colors group-hover:text-accent">
-                  {item.title}
+              <span className="flex flex-col gap-1.5">
+                <strong className="font-display text-xl font-medium tracking-tight">
+                  <span className="link-sweep">{item.title}</span>
                 </strong>
-                <span className="text-sm text-muted">{item.description}</span>
+                <span className="text-sm leading-relaxed text-muted">
+                  {item.description}
+                </span>
               </span>
             </Link>
           ))}
         </div>
       </section>
 
+      <div aria-hidden="true" className="mx-auto max-w-6xl px-6">
+        <hr className="border-ink-rule" />
+      </div>
+
       {/* Derniers articles */}
       <section
         aria-labelledby="articles-title"
-        className="mx-auto max-w-6xl px-6 pb-14"
+        className="mx-auto max-w-6xl px-6 py-20 sm:py-24"
       >
-        <div className="mb-8 flex items-baseline justify-between gap-4">
-          <h2
-            id="articles-title"
-            className="text-xl font-semibold tracking-tight"
-          >
-            Derniers articles
-          </h2>
+        <div className="mb-10 flex flex-wrap items-baseline justify-between gap-4">
+          <div className="flex items-baseline gap-3 sm:gap-4">
+            <span
+              aria-hidden="true"
+              className="font-display text-sm italic text-accent"
+            >
+              03
+            </span>
+            <h2
+              id="articles-title"
+              className="font-display text-2xl font-medium tracking-tight sm:text-3xl"
+            >
+              Derniers articles
+            </h2>
+          </div>
           <Link
             href="/blog"
             title="Consulter tous les articles"
-            className="text-sm font-medium text-accent transition-colors hover:underline"
+            className="link-sweep text-sm font-medium text-accent"
           >
             Voir tous les articles →
           </Link>
