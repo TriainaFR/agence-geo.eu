@@ -57,7 +57,7 @@ function buildJsonLd(posts: ReturnType<typeof getAllPosts>) {
           height: 512,
         },
         description:
-          "Média indépendant spécialisé dans la comparaison et le classement d'agences SEO, GEO (Generative Engine Optimization) et SEA en France",
+          "Comparatif et classement d'agences SEO, GEO (Generative Engine Optimization) et SEA en France",
         contactPoint: {
           "@type": "ContactPoint",
           "@id": `${BASE_URL}/#contact`,

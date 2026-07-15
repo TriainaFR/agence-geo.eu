@@ -25,21 +25,20 @@ export function Footer() {
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="rounded-xl border border-border bg-accent-soft px-5 py-4 text-sm text-muted">
-          <strong className="text-foreground">Agence-Geo.eu</strong> est un
-          média indépendant. Nous ne sommes affiliés à aucune des agences SEO,
-          GEO ou SEA mentionnées sur ce site, et ne percevons aucune
-          commission sur les recommandations publiées.
+          Nos classements et guides s&apos;appuient sur des critères
+          objectifs (méthodologie, outils, cas clients vérifiables) et une
+          veille continue du marché du SEO, du GEO et du SEA.
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-3">
           <section>
             <h3 className="text-sm font-semibold tracking-tight">À propos</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              <strong className="text-foreground">Agence-Geo.eu</strong> est un
-              média indépendant dédié à la comparaison et l&apos;analyse
-              d&apos;agences SEO, GEO et SEA en France. Nous publions des
-              guides, des classements et des actualités pour aider les
-              entreprises à choisir le bon prestataire en marketing digital.
+              <strong className="text-foreground">Agence-Geo.eu</strong>{" "}
+              compare et analyse les agences SEO, GEO et SEA en France. Nous
+              publions des guides, des classements et des actualités pour
+              aider les entreprises à choisir le bon prestataire en marketing
+              digital.
             </p>
           </section>
 
@@ -66,7 +65,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-start justify-between gap-2 border-t border-border pt-6 text-sm text-muted sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} Agence-Geo.eu — Tous droits réservés.</p>
-          <p>Média indépendant spécialisé dans le SEO, GEO et SEA.</p>
+          <p>Comparatif d&apos;agences spécialisé dans le SEO, GEO et SEA.</p>
         </div>
       </div>
     </footer>

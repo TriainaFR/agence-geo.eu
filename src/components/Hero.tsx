@@ -33,7 +33,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto mt-4 max-w-xl text-base text-muted"
         >
-          Média indépendant <strong className="text-foreground">SEO</strong> ·{" "}
+          Le guide des agences <strong className="text-foreground">SEO</strong> ·{" "}
           <strong className="text-foreground">GEO</strong> ·{" "}
           <strong className="text-foreground">SEA</strong>
         </motion.p>

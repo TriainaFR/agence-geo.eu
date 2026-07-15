@@ -15,17 +15,17 @@ export default function MentionsLegalesPage() {
       <div className="prose prose-neutral mt-8 max-w-none dark:prose-invert">
         <h2>Éditeur du site</h2>
         <p>
-          Agence-Geo.eu — média indépendant.
+          Agence-Geo.eu — comparatif d&apos;agences SEO, GEO et SEA.
           <br />
           Contact : contact@agence-geo.eu
         </p>
         <h2>Hébergement</h2>
         <p>Railway Corp. — https://railway.app</p>
-        <h2>Indépendance éditoriale</h2>
+        <h2>Méthodologie éditoriale</h2>
         <p>
-          Agence-Geo.eu est un média indépendant. Nous ne sommes affiliés à
-          aucune des agences SEO, GEO ou SEA mentionnées sur ce site, et ne
-          percevons aucune commission sur les recommandations publiées.
+          Nos classements et guides s&apos;appuient sur des critères
+          objectifs (méthodologie, outils, cas clients vérifiables) et une
+          veille continue du marché du SEO, du GEO et du SEA.
         </p>
         <p className="text-sm text-muted">
           [À compléter : raison sociale, adresse, directeur de la publication,

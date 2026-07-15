@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s — Agence-Geo.eu",
   },
   description:
-    "Média indépendant : comparatifs et classements d'agences SEO, GEO (Generative Engine Optimization) et SEA en France. Analyses sans filtre pour choisir le bon prestataire à Paris, Lyon et régions.",
+    "Comparatifs et classements d'agences SEO, GEO (Generative Engine Optimization) et SEA en France. Guides et analyses pour choisir le bon prestataire à Paris, Lyon et en région.",
   authors: [{ name: "Agence-Geo.eu" }],
   alternates: {
     canonical: "/",
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     siteName: "Agence-Geo.eu",
     title: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA en France",
     description:
-      "Comparatifs et classements d'agences SEO, GEO et SEA. Guides pratiques pour choisir votre prestataire sans filtre.",
+      "Comparatifs et classements d'agences SEO, GEO et SEA. Guides pratiques pour choisir votre prestataire en marketing digital.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA",
     description:
-      "Analyses indépendantes et classements d'agences SEO, GEO, SEA en France.",
+      "Analyses et classements d'agences SEO, GEO, SEA en France.",
   },
 };
 

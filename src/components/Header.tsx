@@ -34,7 +34,7 @@ export function Header() {
         </Link>
 
         <span className="hidden shrink-0 rounded-full border border-border px-3 py-1 text-xs text-muted sm:inline-block">
-          Média indépendant
+          Comparatif SEO · GEO · SEA
         </span>
 
         <nav className="order-3 flex w-full items-center gap-1 overflow-x-auto rounded-full border border-border bg-background p-1 sm:order-none sm:w-auto">
