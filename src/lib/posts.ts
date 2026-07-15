@@ -25,6 +25,7 @@ function readPostFile(fileName: string): Post {
     cover: data.cover,
     region: data.region,
     city: data.city,
+    faq: data.faq,
     content,
   };
 }

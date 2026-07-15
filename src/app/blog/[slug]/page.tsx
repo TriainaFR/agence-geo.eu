@@ -9,6 +9,8 @@ export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
+const BASE_URL = "https://agence-geo.eu";
+
 export async function generateMetadata({
   params,
 }: {
@@ -20,7 +22,58 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: `/blog/${post.slug}` },
   };
+}
+
+function buildJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
+  const url = `${BASE_URL}/blog/${post.slug}`;
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "Article",
+      "@id": `${url}#article`,
+      headline: post.title,
+      description: post.description,
+      ...(post.cover ? { image: `${BASE_URL}${post.cover}` } : {}),
+      author: { "@type": "Organization", name: "Agence-Geo.eu" },
+      publisher: {
+        "@type": "Organization",
+        name: "Agence-Geo.eu",
+        logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png` },
+      },
+      datePublished: post.date,
+      dateModified: post.date,
+      mainEntityOfPage: url,
+      inLanguage: "fr",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Accueil", item: `${BASE_URL}/` },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: CATEGORY_LABELS[post.category],
+          item: `${BASE_URL}/${post.category}`,
+        },
+        { "@type": "ListItem", position: 3, name: post.title, item: url },
+      ],
+    },
+  ];
+
+  if (post.faq && post.faq.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: post.faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
 }
 
 export default async function BlogPostPage({
@@ -32,8 +85,14 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const jsonLd = buildJsonLd(post);
+
   return (
     <article className="mx-auto max-w-3xl px-6 py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mb-6 flex items-center gap-3 text-sm text-muted">
         <span className="rounded-full bg-accent-soft px-2.5 py-1 font-medium text-accent">
           {CATEGORY_LABELS[post.category]}

@@ -1,5 +1,10 @@
 export type Category = "seo" | "geo" | "sea" | "localisation";
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type PostMeta = {
   slug: string;
   title: string;
@@ -10,6 +15,7 @@ export type PostMeta = {
   cover: string;
   region?: string;
   city?: string;
+  faq?: FaqItem[];
 };
 
 export const CATEGORY_LABELS: Record<Category, string> = {
