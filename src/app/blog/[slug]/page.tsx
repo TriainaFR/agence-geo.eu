@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { CATEGORY_LABELS, getAllPosts, getPostBySlug } from "@/lib/posts";
 
 export function generateStaticParams() {
@@ -57,7 +58,10 @@ export default async function BlogPostPage({
       )}
 
       <div className="prose prose-neutral mt-10 max-w-none prose-headings:tracking-tight prose-a:text-accent dark:prose-invert">
-        <MDXRemote source={post.content} />
+        <MDXRemote
+          source={post.content}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        />
       </div>
     </article>
   );

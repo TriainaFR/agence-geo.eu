@@ -1,0 +1,36 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef0fd"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </linearGradient>
+    <radialGradient id="glowg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#4338ca" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgg)"/>
+  <circle cx="420" cy="180" r="230" fill="url(#glowg)"/>
+
+  <!-- chat bubble with citation motif -->
+  <g transform="translate(250,110)">
+    <rect x="0" y="0" width="300" height="170" rx="22" fill="#ffffff" opacity="0.85"/>
+    <path d="M60 170 L60 205 L100 170 Z" fill="#ffffff" opacity="0.85"/>
+    <g fill="#c7d2fe">
+      <rect x="30" y="34" width="240" height="14" rx="7"/>
+      <rect x="30" y="64" width="190" height="14" rx="7"/>
+    </g>
+    <!-- highlighted citation line -->
+    <rect x="30" y="94" width="220" height="14" rx="7" fill="#4338ca" opacity="0.75"/>
+    <rect x="30" y="124" width="150" height="14" rx="7" fill="#c7d2fe"/>
+  </g>
+
+  <!-- sparkle / generative accents -->
+  <g fill="#4338ca">
+    <path d="M620 120 l7 18 18 7 -18 7 -7 18 -7 -18 -18 -7 18 -7 Z" opacity="0.6"/>
+    <path d="M180 300 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 Z" opacity="0.45"/>
+    <path d="M640 300 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z" opacity="0.35"/>
+  </g>
+
+  <text x="60" y="390" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#312e81" opacity="0.55">Agence GEO</text>
+</svg>

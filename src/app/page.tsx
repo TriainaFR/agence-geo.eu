@@ -30,12 +30,12 @@ const SPECIALITES = [
 
 const LOCALISATIONS = [
   {
-    href: "/blog/agence-seo-paris",
+    href: "/localisation",
     title: "Agences à Paris",
     description: "Île-de-France : la plus forte concentration d'agences",
   },
   {
-    href: "/blog/agence-seo-lyon",
+    href: "/localisation",
     title: "Agences à Lyon",
     description: "Auvergne-Rhône-Alpes : un pôle dynamique en région",
   },
@@ -234,7 +234,7 @@ export default function Home() {
         <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {LOCALISATIONS.map((item) => (
             <Link
-              key={item.href}
+              key={item.title}
               href={item.href}
               title={item.description}
               className="group flex items-start gap-4 rounded-2xl border border-border bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
