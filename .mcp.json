@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "chatseo": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://api.chatseo.app/mcp",
+        "--allow-http"
+      ]
+    }
+  }
+}
