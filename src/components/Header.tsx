@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
@@ -18,8 +19,14 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-surface/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:gap-6 sm:px-6 sm:py-4">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">
-            AG
+          <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-border">
+            <Image
+              src="/logo-96.png"
+              alt="Logo Agence-Geo.eu"
+              width={36}
+              height={36}
+              unoptimized
+            />
           </span>
           <span className="text-base font-semibold tracking-tight">
             Agence-Geo<span className="text-accent">.eu</span>

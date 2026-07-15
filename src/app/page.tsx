@@ -50,6 +50,12 @@ function buildJsonLd(posts: ReturnType<typeof getAllPosts>) {
         "@id": `${BASE_URL}/#organization`,
         name: "Agence-Geo.eu",
         url: BASE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${BASE_URL}/logo.png`,
+          width: 512,
+          height: 512,
+        },
         description:
           "Média indépendant spécialisé dans la comparaison et le classement d'agences SEO, GEO (Generative Engine Optimization) et SEA en France",
         contactPoint: {
