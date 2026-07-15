@@ -1,4 +1,4 @@
-export type Category = "seo" | "geo" | "localisation";
+export type Category = "seo" | "geo" | "sea" | "localisation";
 
 export type PostMeta = {
   slug: string;
@@ -15,5 +15,6 @@ export type PostMeta = {
 export const CATEGORY_LABELS: Record<Category, string> = {
   seo: "SEO",
   geo: "GEO",
+  sea: "SEA",
   localisation: "Par localisation",
 };

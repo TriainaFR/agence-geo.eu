@@ -8,6 +8,7 @@ import { CATEGORY_LABELS, type PostMeta } from "@/lib/categories";
 const CATEGORY_STYLES: Record<string, string> = {
   seo: "bg-accent-soft text-accent",
   geo: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+  sea: "bg-sky-500/10 text-sky-600 dark:text-sky-400",
   localisation: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
 };
 

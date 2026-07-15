@@ -17,7 +17,7 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="mb-4 inline-block rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted"
         >
-          Média indépendant SEO · GEO · SEA
+          Comparatifs & classements d&apos;agences en France
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
@@ -33,9 +33,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto mt-4 max-w-xl text-base text-muted"
         >
-          Analyses, comparatifs et actualités sur le référencement naturel,
-          l&apos;optimisation pour les moteurs génératifs, et les agences par
-          région.
+          Média indépendant <strong className="text-foreground">SEO</strong> ·{" "}
+          <strong className="text-foreground">GEO</strong> ·{" "}
+          <strong className="text-foreground">SEA</strong>
         </motion.p>
       </div>
     </section>

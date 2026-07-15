@@ -17,15 +17,37 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://agence-geo.eu"),
   title: {
-    default: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA",
+    default: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA en France",
     template: "%s — Agence-Geo.eu",
   },
   description:
-    "Média indépendant sur le SEO, le GEO (Generative Engine Optimization) et le SEA : analyses, guides et comparatifs d'agences par région.",
+    "Média indépendant : comparatifs et classements d'agences SEO, GEO (Generative Engine Optimization) et SEA en France. Analyses sans filtre pour choisir le bon prestataire à Paris, Lyon et régions.",
+  authors: [{ name: "Agence-Geo.eu" }],
+  alternates: {
+    canonical: "/",
+    languages: { fr: "/" },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
+    url: "/",
     siteName: "Agence-Geo.eu",
+    title: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA en France",
+    description:
+      "Comparatifs et classements d'agences SEO, GEO et SEA. Guides pratiques pour choisir votre prestataire sans filtre.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA",
+    description:
+      "Analyses indépendantes et classements d'agences SEO, GEO, SEA en France.",
   },
 };
 

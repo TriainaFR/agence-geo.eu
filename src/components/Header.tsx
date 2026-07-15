@@ -7,6 +7,7 @@ import clsx from "clsx";
 const NAV_ITEMS = [
   { href: "/seo", label: "SEO" },
   { href: "/geo", label: "GEO" },
+  { href: "/sea", label: "SEA" },
   { href: "/localisation", label: "Par localisation" },
 ];
 
