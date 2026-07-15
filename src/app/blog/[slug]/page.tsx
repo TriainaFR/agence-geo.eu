@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { CATEGORY_LABELS, getAllPosts, getPostBySlug } from "@/lib/posts";
@@ -48,6 +49,12 @@ export default async function BlogPostPage({
         {post.title}
       </h1>
       <p className="mt-4 text-lg text-muted">{post.description}</p>
+
+      {post.cover && (
+        <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl border border-border">
+          <Image src={post.cover} alt="" fill className="object-cover" priority />
+        </div>
+      )}
 
       <div className="prose prose-neutral mt-10 max-w-none prose-headings:tracking-tight prose-a:text-accent dark:prose-invert">
         <MDXRemote source={post.content} />

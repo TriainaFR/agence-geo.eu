@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { CATEGORY_LABELS, type PostMeta } from "@/lib/categories";
 
@@ -23,9 +24,19 @@ export function ArticleCard({ post, index = 0 }: { post: PostMeta; index?: numbe
         className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5"
       >
         <div className="relative aspect-[16/9] overflow-hidden bg-accent-soft">
-          <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-accent/20 transition-transform duration-500 group-hover:scale-110">
-            {CATEGORY_LABELS[post.category]}
-          </div>
+          {post.cover ? (
+            <Image
+              src={post.cover}
+              alt=""
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-accent/20 transition-transform duration-500 group-hover:scale-110">
+              {CATEGORY_LABELS[post.category]}
+            </div>
+          )}
         </div>
         <div className="flex flex-1 flex-col gap-3 p-5">
           <span

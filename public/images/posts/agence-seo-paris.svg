@@ -1,0 +1,30 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg4)"/>
+
+  <!-- abstract skyline -->
+  <g fill="#b45309" opacity="0.25">
+    <rect x="120" y="220" width="50" height="150"/>
+    <rect x="185" y="180" width="50" height="190"/>
+    <rect x="250" y="240" width="50" height="130"/>
+    <rect x="315" y="150" width="50" height="220"/>
+    <rect x="380" y="200" width="50" height="170"/>
+  </g>
+  <!-- eiffel-like silhouette -->
+  <g fill="#92400e" opacity="0.5">
+    <path d="M470 370 L500 150 L530 370 Z"/>
+    <rect x="485" y="230" width="30" height="8"/>
+    <rect x="493" y="180" width="14" height="8"/>
+  </g>
+
+  <!-- location pin -->
+  <g transform="translate(590,150)">
+    <path d="M40 0 C62 0 80 18 80 40 C80 70 40 110 40 110 C40 110 0 70 0 40 C0 18 18 0 40 0 Z" fill="#d97706" opacity="0.85"/>
+    <circle cx="40" cy="40" r="16" fill="#fffbeb"/>
+  </g>
+</svg>
