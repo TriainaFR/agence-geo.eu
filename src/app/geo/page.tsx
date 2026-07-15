@@ -1,0 +1,33 @@
+import type { Metadata } from "next";
+import { ArticleCard } from "@/components/ArticleCard";
+import { getPostsByCategory } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "GEO",
+  description:
+    "Generative Engine Optimization : comprendre et optimiser sa visibilité dans les réponses des IA génératives.",
+};
+
+export default function GeoPage() {
+  const posts = getPostsByCategory("geo");
+
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-14">
+      <div className="mb-10">
+        <h1 className="text-3xl font-semibold tracking-tight">GEO</h1>
+        <p className="mt-2 max-w-xl text-muted">
+          Generative Engine Optimization : visibilité dans ChatGPT,
+          Perplexity, Gemini et les autres moteurs conversationnels.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post, i) => (
+          <ArticleCard key={post.slug} post={post} index={i} />
+        ))}
+      </div>
+      {posts.length === 0 && (
+        <p className="text-muted">Aucun article publié pour le moment.</p>
+      )}
+    </section>
+  );
+}

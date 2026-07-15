@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --turbopack --no-install)",
+      "Bash(npm -v)",
+      "Bash(mkdir -p \"/Users/l.l/Desktop/Triaina/Site Web /Agence-Geo.eu/src/content/posts\" \"/Users/l.l/Desktop/Triaina/Site Web /Agence-Geo.eu/src/lib\" \"/Users/l.l/Desktop/Triaina/Site Web /Agence-Geo.eu/src/components\")"
+    ]
+  }
+}
