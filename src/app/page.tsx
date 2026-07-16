@@ -156,10 +156,35 @@ function buildJsonLd(posts: ReturnType<typeof getAllPosts>) {
   };
 }
 
+function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
+  return (
+    <div className="text-center">
+      <h2
+        id={id}
+        className="font-display text-3xl font-medium italic tracking-tight sm:text-4xl"
+      >
+        {children}
+      </h2>
+      <span
+        aria-hidden="true"
+        className="mx-auto mt-6 block h-[3px] w-10 bg-foreground"
+      />
+    </div>
+  );
+}
+
 export default function Home() {
   const posts = getAllPosts();
   const latestPosts = posts.slice(0, 6);
   const jsonLd = buildJsonLd(posts);
+  const featured = {
+    slug: latestPosts[0].slug,
+    title: latestPosts[0].title,
+    description: latestPosts[0].description,
+    category: latestPosts[0].category,
+    cover: latestPosts[0].cover,
+    city: latestPosts[0].city,
+  };
 
   return (
     <>
@@ -168,168 +193,109 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Hero />
+      <Hero featured={featured} />
 
       {/* Mission */}
       <section
         aria-labelledby="positioning-title"
         className="mx-auto max-w-6xl px-6 py-20 sm:py-24"
       >
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[220px_1fr] md:gap-16">
-          <div className="flex items-start gap-3 md:flex-col md:gap-4">
-            <span
-              aria-hidden="true"
-              className="font-display text-sm italic text-accent"
-            >
-              01
-            </span>
-            <h2
-              id="positioning-title"
-              className="font-display text-2xl font-medium tracking-tight sm:text-3xl"
-            >
-              Notre mission
-            </h2>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6 sm:pl-8">
-            <p className="text-lg leading-relaxed sm:text-xl">
-              Analyses, comparatifs et actualités sur le{" "}
-              <strong>référencement naturel</strong>, l&apos;
-              <strong>optimisation pour les moteurs génératifs</strong> (GEO),
-              et les <strong>agences par région</strong>.
-            </p>
-            <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
-              Nous vous aidons à évaluer sérieusement les prestataires en
-              marketing digital, sans parti pris commercial. Nos classements et
-              guides sont basés sur des critères objectifs et des retours
-              d&apos;expérience vérifiés.
-            </p>
-          </div>
+        <SectionTitle id="positioning-title">Notre mission</SectionTitle>
+        <div className="mx-auto mt-10 max-w-2xl text-center">
+          <p className="text-lg leading-relaxed sm:text-xl">
+            Analyses, comparatifs et actualités sur le{" "}
+            <strong>référencement naturel</strong>, l&apos;
+            <strong>optimisation pour les moteurs génératifs</strong> (GEO), et
+            les <strong>agences par région</strong>.
+          </p>
+          <p className="mt-6 text-base leading-relaxed text-muted sm:text-lg">
+            Nous vous aidons à évaluer sérieusement les prestataires en
+            marketing digital, sans parti pris commercial. Nos classements et
+            guides sont basés sur des critères objectifs et des retours
+            d&apos;expérience vérifiés.
+          </p>
         </div>
       </section>
-
-      <div aria-hidden="true" className="mx-auto max-w-6xl px-6">
-        <hr className="border-ink-rule" />
-      </div>
 
       {/* Classements */}
       <section
         aria-labelledby="rankings-title"
-        className="mx-auto max-w-6xl px-6 py-20 sm:py-24"
+        className="border-y border-border bg-surface py-20 sm:py-24"
       >
-        <div className="flex items-baseline gap-3 sm:gap-4">
-          <span
-            aria-hidden="true"
-            className="font-display text-sm italic text-accent"
-          >
-            02
-          </span>
-          <h2
-            id="rankings-title"
-            className="font-display text-2xl font-medium tracking-tight sm:text-3xl"
-          >
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionTitle id="rankings-title">
             Classements et comparatifs
-          </h2>
-        </div>
+          </SectionTitle>
 
-        <h3 className="mt-12 text-xs font-medium uppercase tracking-[0.2em] text-muted">
-          Par spécialité
-        </h3>
-        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {SPECIALITES.map((item, i) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              title={`Consulter le classement des ${item.title.toLowerCase()}`}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10"
-            >
-              <span
-                aria-hidden="true"
-                className="font-display absolute -right-2 -top-5 select-none text-7xl font-semibold italic text-accent/[0.07] transition-transform duration-500 group-hover:scale-110"
+          <h3 className="mt-14 text-center text-xs font-medium uppercase tracking-[0.25em] text-muted">
+            Par spécialité
+          </h3>
+          <div className="mt-6 grid grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {SPECIALITES.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                title={`Consulter le classement des ${item.title.toLowerCase()}`}
+                className="group flex flex-col items-center gap-4 px-6 py-10 text-center"
               >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
-                <item.icon size={20} />
-              </span>
-              <strong className="font-display text-xl font-medium tracking-tight">
-                <span className="link-sweep">{item.title}</span>
-              </strong>
-              <span className="text-sm leading-relaxed text-muted">
-                {item.description}
-              </span>
-              <span
-                aria-hidden="true"
-                className="mt-auto text-sm text-accent opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-              >
-                →
-              </span>
-            </Link>
-          ))}
-        </div>
-
-        <h3 className="mt-14 text-xs font-medium uppercase tracking-[0.2em] text-muted">
-          Par localisation
-        </h3>
-        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {LOCALISATIONS.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              title={item.description}
-              className="group flex items-start gap-5 rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 dark:text-amber-400">
-                <MapPin size={20} />
-              </span>
-              <span className="flex flex-col gap-1.5">
-                <strong className="font-display text-xl font-medium tracking-tight">
-                  <span className="link-sweep">{item.title}</span>
+                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-foreground/25 text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background">
+                  <item.icon size={20} />
+                </span>
+                <strong className="font-display text-xl font-medium tracking-tight decoration-accent decoration-2 underline-offset-4 group-hover:underline">
+                  {item.title}
                 </strong>
-                <span className="text-sm leading-relaxed text-muted">
+                <span className="max-w-[26ch] text-sm leading-relaxed text-muted">
                   {item.description}
                 </span>
-              </span>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+
+          <h3 className="mt-14 text-center text-xs font-medium uppercase tracking-[0.25em] text-muted">
+            Par localisation
+          </h3>
+          <div className="mt-6 grid grid-cols-1 divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+            {LOCALISATIONS.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                title={item.description}
+                className="group flex flex-col items-center gap-4 px-6 py-10 text-center"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-foreground/25 text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background">
+                  <MapPin size={20} />
+                </span>
+                <strong className="font-display text-xl font-medium tracking-tight decoration-accent decoration-2 underline-offset-4 group-hover:underline">
+                  {item.title}
+                </strong>
+                <span className="max-w-[30ch] text-sm leading-relaxed text-muted">
+                  {item.description}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
-
-      <div aria-hidden="true" className="mx-auto max-w-6xl px-6">
-        <hr className="border-ink-rule" />
-      </div>
 
       {/* Derniers articles */}
       <section
         aria-labelledby="articles-title"
         className="mx-auto max-w-6xl px-6 py-20 sm:py-24"
       >
-        <div className="mb-10 flex flex-wrap items-baseline justify-between gap-4">
-          <div className="flex items-baseline gap-3 sm:gap-4">
-            <span
-              aria-hidden="true"
-              className="font-display text-sm italic text-accent"
-            >
-              03
-            </span>
-            <h2
-              id="articles-title"
-              className="font-display text-2xl font-medium tracking-tight sm:text-3xl"
-            >
-              Derniers articles
-            </h2>
-          </div>
-          <Link
-            href="/blog"
-            title="Consulter tous les articles"
-            className="link-sweep text-sm font-medium text-accent"
-          >
-            Voir tous les articles →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionTitle id="articles-title">Derniers articles</SectionTitle>
+        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {latestPosts.map((post, i) => (
             <ArticleCard key={post.slug} post={post} index={i} />
           ))}
+        </div>
+        <div className="mt-14 text-center">
+          <Link
+            href="/blog"
+            title="Consulter tous les articles"
+            className="inline-block border border-foreground px-7 py-3.5 text-xs font-medium uppercase tracking-[0.2em] text-foreground transition-colors duration-300 hover:bg-foreground hover:text-background"
+          >
+            Voir tous les articles →
+          </Link>
         </div>
       </section>
     </>
