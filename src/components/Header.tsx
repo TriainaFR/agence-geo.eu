@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: "/sea", label: "SEA" },
   { href: "/localisation", label: "Par localisation" },
   { href: "/notre-histoire-objectif", label: "Notre histoire" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function NavLinks({ compact = false }: { compact?: boolean }) {

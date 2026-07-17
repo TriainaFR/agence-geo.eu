@@ -15,7 +15,7 @@ const FOOTER_COLUMNS = [
     links: [
       { href: "/blog", label: "Blog" },
       { href: "/notre-histoire-objectif", label: "Notre histoire & notre objectif" },
-      { href: "mailto:contact@agence-geo.eu", label: "Contact" },
+      { href: "/contact", label: "Contact" },
       { href: "/mentions-legales", label: "Mentions légales" },
     ],
   },
