@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Tous nos articles et guides sur le SEO, le GEO et le SEA : analyses, comparatifs et actualités.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogIndexPage() {

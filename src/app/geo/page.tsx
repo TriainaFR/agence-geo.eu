@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "GEO",
   description:
     "Generative Engine Optimization : comprendre et optimiser sa visibilité dans les réponses des IA génératives.",
+  alternates: { canonical: "/geo" },
 };
 
 export default function GeoPage() {

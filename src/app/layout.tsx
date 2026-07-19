@@ -29,10 +29,6 @@ export const metadata: Metadata = {
   description:
     "Comparatifs et classements d'agences SEO, GEO (Generative Engine Optimization) et SEA en France. Guides et analyses pour choisir le bon prestataire à Paris, Lyon et en région.",
   authors: [{ name: "Agence-Geo.eu" }],
-  alternates: {
-    canonical: "/",
-    languages: { fr: "/" },
-  },
   robots: {
     index: true,
     follow: true,
@@ -48,12 +44,21 @@ export const metadata: Metadata = {
     title: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA en France",
     description:
       "Comparatifs et classements d'agences SEO, GEO et SEA. Guides pratiques pour choisir votre prestataire en marketing digital.",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Agence-Geo.eu — Comparatif d'agences SEO, GEO & SEA",
     description:
       "Analyses et classements d'agences SEO, GEO, SEA en France.",
+    images: ["/og-default.png"],
   },
 };
 

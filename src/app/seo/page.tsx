@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "SEO",
   description:
     "Guides, critères et actualités pour comprendre et choisir une agence SEO.",
+  alternates: { canonical: "/seo" },
 };
 
 export default function SeoPage() {

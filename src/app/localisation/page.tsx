@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Par localisation",
   description:
     "Trouvez une agence SEO, GEO ou SEA près de chez vous : panorama par région et par ville.",
+  alternates: { canonical: "/localisation" },
 };
 
 export default function LocalisationPage() {

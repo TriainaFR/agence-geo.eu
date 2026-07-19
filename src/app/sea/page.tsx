@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "SEA",
   description:
     "Publicité en ligne : comparatifs et guides pour choisir une agence SEA (Google Ads, Meta, LinkedIn).",
+  alternates: { canonical: "/sea" },
 };
 
 export default function SeaPage() {

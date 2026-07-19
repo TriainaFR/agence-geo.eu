@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Search, Sparkles, Megaphone, MapPin } from "lucide-react";
 import { Hero } from "@/components/Hero";
@@ -5,6 +6,10 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { getAllPosts, CATEGORY_LABELS } from "@/lib/posts";
 
 const BASE_URL = "https://agence-geo.eu";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const SPECIALITES = [
   {

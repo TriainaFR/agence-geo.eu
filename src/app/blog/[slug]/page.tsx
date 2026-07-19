@@ -19,10 +19,30 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  const url = `${BASE_URL}/blog/${post.slug}`;
+  const image =
+    post.cover && /\.(jpe?g|png|webp)$/i.test(post.cover)
+      ? `${BASE_URL}${post.cover}`
+      : `${BASE_URL}/og-default.png`;
   return {
     title: post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description: post.description,
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      images: [{ url: image, width: 1600, height: 900, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [image],
+    },
   };
 }
 
