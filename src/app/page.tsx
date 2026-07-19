@@ -4,6 +4,7 @@ import { Search, Sparkles, Megaphone, MapPin } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { ArticleCard } from "@/components/ArticleCard";
 import { getAllPosts, CATEGORY_LABELS } from "@/lib/posts";
+import { authorJsonLd } from "@/lib/author";
 
 const BASE_URL = "https://agence-geo.eu";
 
@@ -35,12 +36,12 @@ const SPECIALITES = [
 
 const LOCALISATIONS = [
   {
-    href: "/localisation",
+    href: "/blog/meilleure-agence-seo-paris-comparatif",
     title: "Agences à Paris",
     description: "Île-de-France : la plus forte concentration d'agences",
   },
   {
-    href: "/localisation",
+    href: "/blog/agence-seo-lyon",
     title: "Agences à Lyon",
     description: "Auvergne-Rhône-Alpes : un pôle dynamique en région",
   },
@@ -148,7 +149,7 @@ function buildJsonLd(posts: ReturnType<typeof getAllPosts>) {
               ...(post.cover ? { image: `${BASE_URL}${post.cover}` } : {}),
               datePublished: post.date,
               dateModified: post.date,
-              author: { "@type": "Organization", name: "Agence-Geo.eu" },
+              author: authorJsonLd(),
               publisher: { "@id": `${BASE_URL}/#organization` },
               keywords: post.tags.join(", "),
               articleSection: CATEGORY_LABELS[post.category],

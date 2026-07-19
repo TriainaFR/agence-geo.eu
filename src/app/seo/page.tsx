@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
+import { CollectionJsonLd } from "@/components/CollectionJsonLd";
 import { getPostsByCategory } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -14,6 +15,12 @@ export default function SeoPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
+      <CollectionJsonLd
+        path="/seo"
+        name="SEO"
+        description="Guides, critères et actualités pour comprendre et choisir une agence SEO."
+        posts={posts}
+      />
       <div className="mb-10">
         <h1 className="font-display text-4xl font-medium tracking-tight">SEO</h1>
         <p className="mt-2 max-w-xl text-muted">

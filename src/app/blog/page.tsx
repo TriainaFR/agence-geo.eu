@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
+import { CollectionJsonLd } from "@/components/CollectionJsonLd";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -14,6 +15,12 @@ export default function BlogIndexPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
+      <CollectionJsonLd
+        path="/blog"
+        name="Blog"
+        description="Tous nos articles et guides sur le SEO, le GEO et le SEA : analyses, comparatifs et actualités."
+        posts={posts}
+      />
       <div className="mb-10">
         <h1 className="font-display text-4xl font-medium tracking-tight">Blog</h1>
         <p className="mt-2 max-w-xl text-muted">

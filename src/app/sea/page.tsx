@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
+import { CollectionJsonLd } from "@/components/CollectionJsonLd";
 import { getPostsByCategory } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -14,6 +15,12 @@ export default function SeaPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
+      <CollectionJsonLd
+        path="/sea"
+        name="SEA"
+        description="Publicité en ligne : comparatifs et guides pour choisir une agence SEA (Google Ads, Meta, LinkedIn)."
+        posts={posts}
+      />
       <div className="mb-10">
         <h1 className="font-display text-4xl font-medium tracking-tight">SEA</h1>
         <p className="mt-2 max-w-xl text-muted">

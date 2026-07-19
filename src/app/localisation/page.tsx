@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
+import { CollectionJsonLd } from "@/components/CollectionJsonLd";
 import { getPostsByCategory } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -14,6 +15,12 @@ export default function LocalisationPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
+      <CollectionJsonLd
+        path="/localisation"
+        name="Par localisation"
+        description="Trouvez une agence SEO, GEO ou SEA près de chez vous : panorama par région et par ville."
+        posts={posts}
+      />
       <div className="mb-10">
         <h1 className="font-display text-4xl font-medium tracking-tight">
           Par localisation

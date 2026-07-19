@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
+import { CollectionJsonLd } from "@/components/CollectionJsonLd";
 import { getPostsByCategory } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -14,6 +15,12 @@ export default function GeoPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
+      <CollectionJsonLd
+        path="/geo"
+        name="GEO"
+        description="Generative Engine Optimization : comprendre et optimiser sa visibilité dans les réponses des IA génératives."
+        posts={posts}
+      />
       <div className="mb-10">
         <h1 className="font-display text-4xl font-medium tracking-tight">GEO</h1>
         <p className="mt-2 max-w-xl text-muted">

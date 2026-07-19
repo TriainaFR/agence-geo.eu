@@ -3,7 +3,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import Link from "next/link";
 import { CATEGORY_LABELS, getAllPosts, getPostBySlug } from "@/lib/posts";
+import { AUTHOR, AUTHOR_URL, authorJsonLd } from "@/lib/author";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -27,6 +29,7 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    authors: [{ name: AUTHOR.name, url: AUTHOR_URL }],
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
@@ -35,6 +38,7 @@ export async function generateMetadata({
       description: post.description,
       publishedTime: post.date,
       modifiedTime: post.date,
+      authors: [AUTHOR_URL],
       images: [{ url: image, width: 1600, height: 900, alt: post.title }],
     },
     twitter: {
@@ -55,7 +59,7 @@ function buildJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
       headline: post.title,
       description: post.description,
       ...(post.cover ? { image: `${BASE_URL}${post.cover}` } : {}),
-      author: { "@type": "Organization", name: "Agence-Geo.eu" },
+      author: authorJsonLd(),
       publisher: {
         "@type": "Organization",
         name: "Agence-Geo.eu",
@@ -65,6 +69,8 @@ function buildJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
       dateModified: post.date,
       mainEntityOfPage: url,
       inLanguage: "fr",
+      articleSection: CATEGORY_LABELS[post.category],
+      ...(post.tags.length ? { keywords: post.tags.join(", ") } : {}),
     },
     {
       "@type": "BreadcrumbList",
@@ -126,17 +132,28 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="mb-6 flex items-center gap-3 text-sm text-muted">
+      <div className="mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted">
         <span className="rounded-full bg-accent-soft px-2.5 py-1 font-medium text-accent">
           {CATEGORY_LABELS[post.category]}
         </span>
-        <time>
+        <time dateTime={post.date}>
           {new Date(post.date).toLocaleDateString("fr-FR", {
             day: "numeric",
             month: "long",
             year: "numeric",
           })}
         </time>
+        <span aria-hidden="true">·</span>
+        <span>
+          Par{" "}
+          <Link
+            href={AUTHOR.path}
+            rel="author"
+            className="font-medium text-foreground decoration-accent/40 underline-offset-4 hover:text-accent hover:underline"
+          >
+            {AUTHOR.name}
+          </Link>
+        </span>
       </div>
       <h1 className="font-display text-4xl font-medium tracking-tight sm:text-5xl">
         {post.title}
