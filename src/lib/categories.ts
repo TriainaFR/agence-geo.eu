@@ -5,6 +5,11 @@ export type FaqItem = {
   answer: string;
 };
 
+export type RankedItem = {
+  name: string;
+  url?: string;
+};
+
 export type PostMeta = {
   slug: string;
   title: string;
@@ -16,6 +21,7 @@ export type PostMeta = {
   region?: string;
   city?: string;
   faq?: FaqItem[];
+  itemList?: RankedItem[];
 };
 
 export const CATEGORY_LABELS: Record<Category, string> = {

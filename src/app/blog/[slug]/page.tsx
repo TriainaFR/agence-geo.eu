@@ -61,6 +61,19 @@ function buildJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
     },
   ];
 
+  if (post.itemList && post.itemList.length > 0) {
+    graph.push({
+      "@type": "ItemList",
+      "@id": `${url}#classement`,
+      itemListElement: post.itemList.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        ...(item.url ? { url: item.url } : {}),
+      })),
+    });
+  }
+
   if (post.faq && post.faq.length > 0) {
     graph.push({
       "@type": "FAQPage",
