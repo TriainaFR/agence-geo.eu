@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 
 const BASE_URL = "https://agence-geo.eu";
 const PAGE_URL = `${BASE_URL}/contact`;
-const EMAIL = "lucas@yonder.fr";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contactez Agence-Geo.eu : signalez une erreur sur une fiche agence, proposez un sujet ou posez une question sur notre méthodologie de classement SEO, GEO et SEA.",
+    "Contactez Agence-Geo.eu via notre formulaire : signalez une erreur sur une fiche agence, proposez un sujet ou posez une question sur notre méthodologie de classement SEO, GEO et SEA.",
   alternates: { canonical: "/contact" },
 };
 
@@ -40,7 +39,7 @@ const JSON_LD = {
       url: PAGE_URL,
       name: "Contact — Agence-Geo.eu",
       description:
-        "Contactez Agence-Geo.eu : signalez une erreur sur une fiche agence, proposez un sujet ou posez une question sur notre méthodologie de classement SEO, GEO et SEA.",
+        "Contactez Agence-Geo.eu via notre formulaire : signalez une erreur sur une fiche agence, proposez un sujet ou posez une question sur notre méthodologie de classement SEO, GEO et SEA.",
       inLanguage: "fr",
       isPartOf: { "@id": `${BASE_URL}/#website` },
       mainEntity: { "@id": `${BASE_URL}/#organization` },
@@ -60,7 +59,7 @@ const JSON_LD = {
         "@type": "ContactPoint",
         "@id": `${PAGE_URL}#contactpoint`,
         contactType: "Customer Service",
-        email: EMAIL,
+        url: PAGE_URL,
         availableLanguage: "fr",
         areaServed: "FR",
       },
@@ -76,10 +75,6 @@ const JSON_LD = {
 };
 
 export default function ContactPage() {
-  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
-    "Contact via Agence-Geo.eu"
-  )}`;
-
   return (
     <>
       <script
@@ -115,30 +110,13 @@ export default function ContactPage() {
           />
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Une question sur un classement, une erreur à signaler ou un sujet à
-            nous proposer ? Un seul point de contact, et nous répondons à
-            chaque message.
+            nous proposer ? Remplissez le formulaire, nous répondons à chaque
+            message.
           </p>
+        </div>
 
-          <a
-            href={mailto}
-            className="group mt-10 inline-flex items-center gap-3 border border-foreground bg-foreground px-8 py-4 text-xs font-medium uppercase tracking-[0.2em] text-background transition-colors duration-300 hover:bg-transparent hover:text-foreground"
-          >
-            <Mail
-              size={16}
-              className="transition-transform duration-300 group-hover:-translate-y-0.5"
-            />
-            Nous envoyer un e-mail
-          </a>
-
-          <p className="mt-5 text-sm text-muted">
-            ou directement à{" "}
-            <a
-              href={mailto}
-              className="font-medium text-accent decoration-accent/40 underline-offset-4 hover:underline"
-            >
-              {EMAIL}
-            </a>
-          </p>
+        <div className="relative mt-12">
+          <ContactForm />
         </div>
 
         <div className="mt-16 grid grid-cols-1 divide-y divide-border border-y border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
