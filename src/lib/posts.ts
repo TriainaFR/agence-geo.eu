@@ -18,6 +18,7 @@ function readPostFile(fileName: string): Post {
   return {
     slug,
     title: data.title,
+    metaTitle: data.metaTitle,
     description: data.description,
     date: data.date,
     category: data.category,

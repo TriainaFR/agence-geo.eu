@@ -27,7 +27,8 @@ export async function generateMetadata({
       ? `${BASE_URL}${post.cover}`
       : `${BASE_URL}/og-default.png`;
   return {
-    title: post.title,
+    // Titre court pour la SERP ; le H1 et l'Open Graph gardent le titre complet.
+    title: post.metaTitle ?? post.title,
     description: post.description,
     authors: [{ name: AUTHOR.name, url: AUTHOR_URL }],
     alternates: { canonical: `/blog/${post.slug}` },

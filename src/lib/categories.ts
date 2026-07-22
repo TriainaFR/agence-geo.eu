@@ -14,6 +14,8 @@ export type RankedItem = {
 export type PostMeta = {
   slug: string;
   title: string;
+  /** Version courte réservée à la balise <title> (le H1 garde `title`). */
+  metaTitle?: string;
   description: string;
   date: string;
   category: Category;
