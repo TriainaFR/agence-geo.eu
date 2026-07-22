@@ -8,6 +8,7 @@ export type FaqItem = {
 export type RankedItem = {
   name: string;
   url?: string;
+  description?: string;
 };
 
 export type PostMeta = {

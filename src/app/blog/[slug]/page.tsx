@@ -96,6 +96,7 @@ function buildJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
         position: i + 1,
         name: item.name,
         ...(item.url ? { url: item.url } : {}),
+        ...(item.description ? { description: item.description } : {}),
       })),
     });
   }
