@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { CATEGORY_LABELS, getAllPosts, getPostBySlug } from "@/lib/posts";
 import { AUTHOR, AUTHOR_URL, authorJsonLd } from "@/lib/author";
+import { mdxComponents } from "@/components/mdx";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -171,6 +172,7 @@ export default async function BlogPostPage({
       <div className="prose prose-neutral mt-10 max-w-none prose-headings:tracking-tight prose-a:text-accent dark:prose-invert">
         <MDXRemote
           source={post.content}
+          components={mdxComponents}
           options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
         />
       </div>
