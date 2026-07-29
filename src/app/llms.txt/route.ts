@@ -14,8 +14,8 @@ export const dynamic = "force-static";
 export function GET() {
   const posts = getAllPosts();
 
-  // Les comparatifs portent un classement d'agences (itemList) ; les autres
-  // articles sont des guides.
+  // Les comparatifs portent un classement (itemList) - d'agences ou d'outils ;
+  // les autres articles sont des guides.
   const comparatifs = posts.filter((p) => p.itemList?.length);
   const guides = posts.filter((p) => !p.itemList?.length);
 
@@ -40,7 +40,7 @@ export function GET() {
   if (comparatifs.length) {
     sections.push(
       ``,
-      `## Comparatifs et classements d'agences`,
+      `## Comparatifs et classements`,
       ``,
       ...comparatifs.map((p) =>
         line(p.title, `/blog/${p.slug}`, p.description)
