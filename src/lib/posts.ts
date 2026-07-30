@@ -21,6 +21,7 @@ function readPostFile(fileName: string): Post {
     metaTitle: data.metaTitle,
     description: data.description,
     date: data.date,
+    updated: data.updated,
     category: data.category,
     tags: data.tags ?? [],
     cover: data.cover,

@@ -39,7 +39,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       publishedTime: post.date,
-      modifiedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
       authors: [AUTHOR_URL],
       images: [{ url: image, width: 1600, height: 900, alt: post.title }],
     },
@@ -68,7 +68,7 @@ function buildJsonLd(post: NonNullable<ReturnType<typeof getPostBySlug>>) {
         logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png` },
       },
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: post.updated ?? post.date,
       mainEntityOfPage: url,
       inLanguage: "fr",
       articleSection: CATEGORY_LABELS[post.category],
@@ -146,6 +146,19 @@ export default async function BlogPostPage({
             year: "numeric",
           })}
         </time>
+        {post.updated && (
+          <>
+            <span aria-hidden="true">·</span>
+            <time dateTime={post.updated}>
+              Mis à jour le{" "}
+              {new Date(post.updated).toLocaleDateString("fr-FR", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </time>
+          </>
+        )}
         <span aria-hidden="true">·</span>
         <span>
           Par{" "}

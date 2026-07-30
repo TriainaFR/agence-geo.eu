@@ -17,7 +17,14 @@ export type PostMeta = {
   /** Version courte réservée à la balise <title> (le H1 garde `title`). */
   metaTitle?: string;
   description: string;
+  /** Date de première publication. Ne bouge jamais après la mise en ligne. */
   date: string;
+  /**
+   * Date de dernière modification de fond, si le contenu a changé après la
+   * publication. Alimente `dateModified` et le `lastmod` du sitemap ; à ne pas
+   * renseigner pour une correction de forme.
+   */
+  updated?: string;
   category: Category;
   tags: string[];
   cover: string;

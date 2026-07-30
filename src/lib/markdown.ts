@@ -47,18 +47,21 @@ function mdxToMarkdown(source: string): string {
 }
 
 function postToMarkdown(post: Post): string {
-  const date = new Date(post.date).toLocaleDateString("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const fr = (iso: string) =>
+    new Date(iso).toLocaleDateString("fr-FR", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
 
   const head = [
     `# ${post.title}`,
     ``,
     `> ${post.description}`,
     ``,
-    `${CATEGORY_LABELS[post.category]} · Publié le ${date} · Par ${AUTHOR.name}, ${AUTHOR.jobTitle}`,
+    `${CATEGORY_LABELS[post.category]} · Publié le ${fr(post.date)}${
+      post.updated ? ` · Mis à jour le ${fr(post.updated)}` : ""
+    } · Par ${AUTHOR.name}, ${AUTHOR.jobTitle}`,
     `Source : ${BASE_URL}/blog/${post.slug}`,
     ``,
   ];

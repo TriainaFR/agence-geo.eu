@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import type { Category } from "@/lib/categories";
+import type { Category, PostMeta } from "@/lib/categories";
 import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 
 const BASE_URL = "https://agence-geo.eu";
@@ -17,18 +17,24 @@ function latest(dates: string[], fallback: string): string {
   return dates.length ? [...dates].sort().at(-1)! : fallback;
 }
 
+/**
+ * Dernière modification réelle d'un article : sa date de mise à jour si le
+ * contenu a changé depuis la publication, sa date de publication sinon.
+ */
+const lastModOf = (post: PostMeta) => post.updated ?? post.date;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
 
-  // Les pages de listing changent réellement dès qu'un article est publié :
-  // leur lastmod suit donc la date du contenu le plus récent qu'elles affichent.
+  // Les pages de listing changent réellement dès qu'un article est publié ou
+  // modifié : leur lastmod suit donc le contenu le plus récent qu'elles affichent.
   const latestOverall = latest(
-    posts.map((p) => p.date),
+    posts.map(lastModOf),
     EMPTY_CATEGORY_UPDATED
   );
   const categoryLastMod = (category: Category) =>
     latest(
-      getPostsByCategory(category).map((p) => p.date),
+      getPostsByCategory(category).map(lastModOf),
       EMPTY_CATEGORY_UPDATED
     );
 
@@ -92,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.date,
+    lastModified: lastModOf(post),
     changeFrequency: "monthly",
     priority: 0.6,
   }));
