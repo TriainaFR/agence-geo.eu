@@ -33,11 +33,19 @@ function readPostFile(fileName: string): Post {
   };
 }
 
+/**
+ * Date qui gouverne l'ordre d'affichage : la dernière modification de fond si
+ * l'article en a une, sa date de publication sinon. Un article rafraîchi
+ * remonte donc en tête des listings, sans pour autant mentir sur sa date de
+ * première publication, qui reste celle affichée et servie en `datePublished`.
+ */
+const sortDate = (post: PostMeta) => post.updated ?? post.date;
+
 export function getAllPosts(): Post[] {
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx"));
   return files
     .map(readPostFile)
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => (sortDate(a) < sortDate(b) ? 1 : -1));
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
