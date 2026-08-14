@@ -86,7 +86,10 @@ export function Card({
       <h3 className="mt-3 font-display text-lg font-medium leading-snug tracking-tight">
         {title}
       </h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{children}</p>
+      {/* <div> et non <p> : MDX enveloppe déjà le corps de la carte dans son
+          propre <p>, et un <p> imbriqué est du HTML invalide — React échouait à
+          hydrater les pages concernées. */}
+      <div className="mt-2 text-sm leading-relaxed text-muted">{children}</div>
     </div>
   );
 }
