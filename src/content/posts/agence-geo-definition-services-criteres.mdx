@@ -1,144 +1,263 @@
 ---
-title: "Agence GEO : définition, services et comment bien la choisir"
+title: "Agence GEO : définition, services et critères de choix"
 metaTitle: "Agence GEO : définition, services et critères"
-description: "Une agence GEO (Generative Engine Optimization) optimise votre marque pour qu'elle soit citée dans les réponses de ChatGPT, Perplexity, Gemini ou Google AI Overview. Définition, services types et 7 critères pour bien choisir."
+description: "Qu'est-ce qu'une agence GEO ? Définition, six services attendus, sept critères de choix, tarifs réels et comparatif GEO vs SEO — après l'analyse de 47 agences françaises."
 date: "2026-07-15"
+updated: "2026-09-04"
 category: "geo"
-tags: ["agence GEO", "Generative Engine Optimization", "ChatGPT", "Perplexity", "Google AI Overview", "guide"]
+tags: ["agence GEO", "Generative Engine Optimization", "ChatGPT", "Perplexity", "Google AI Overview", "tarifs GEO", "guide"]
 cover: "/images/posts/agence-geo-guide.jpg"
+faq:
+  - question: "Qu'est-ce qu'une agence GEO ?"
+    answer: "Une agence GEO (Generative Engine Optimization) est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'IA : ChatGPT, Perplexity, Google AI Overview, Gemini ou Copilot. Son travail n'est pas de vous faire classer sur une page de résultats, mais de faire en sorte que votre entreprise soit citée, résumée ou recommandée quand un utilisateur pose une question à une IA. Elle travaille l'extractibilité de vos contenus — leur capacité à être compris, découpés et réutilisés par un modèle de langage — et votre présence sur les sources tierces que ces modèles jugent fiables."
+  - question: "Quelle est la différence entre GEO et SEO ?"
+    answer: "Le SEO optimise la page entière pour la faire classer dans les résultats de recherche classiques ; ses signaux sont les backlinks, l'autorité de domaine et l'expérience utilisateur. Le GEO optimise le passage extractible — une phrase, une statistique, un tableau — pour qu'il soit repris dans une réponse générée ; ses signaux sont la clarté sémantique, les données chiffrées et la cohérence entre plusieurs sources. Les deux sont complémentaires : le GEO ne fonctionne pas sans fondations SEO, parce qu'un site mal structuré ou sans autorité n'est pas correctement exploré par les moteurs qui alimentent les IA."
+  - question: "Quelle est la différence entre GEO et AEO ?"
+    answer: "L'AEO (Answer Engine Optimization) est un terme proche, parfois employé indifféremment. Dans l'usage courant, l'AEO se concentre sur les featured snippets et les réponses directes des moteurs de recherche classiques, tandis que le GEO cible spécifiquement les IA génératives conversationnelles et les résumés générés. Les techniques se recoupent largement : contenu structuré, réponses courtes et directes, données vérifiables."
+  - question: "Quels services propose une agence GEO ?"
+    answer: "Six prestations forment le socle : l'audit de citabilité IA, la restructuration des contenus pour l'extractibilité, le travail sur les sources tierces que les IA citent réellement, l'optimisation technique (schema.org, données structurées), le suivi et la mesure des citations, et le conseil éditorial sur la fraîcheur des contenus. Certaines agences ajoutent la formation d'équipes internes ou le placement de contenu dans des médias partenaires."
+  - question: "Quels critères pour choisir une agence GEO ?"
+    answer: "Sept critères : une méthodologie explicite et démontrable, une expertise SEO préalable solide, des outils de mesure dédiés au tracking des citations, des cas clients datés et vérifiables, une compréhension technique réelle des modèles de langage, un reporting chiffré et régulier, et une tarification claire. Le filtre le plus rapide : demandez avec quel outil l'agence constate vos citations. Sur les 47 agences françaises que nous avons analysées, 12 seulement en ont un."
+  - question: "Combien coûte une agence GEO ?"
+    answer: "D'après notre analyse de 47 agences françaises, un audit GEO se situe entre 800 et 3 000 €, un accompagnement mensuel entre 500 et 5 000 €/mois, une formation d'équipe entre 500 et 2 000 €, et une stratégie GEO complète sur six mois entre 2 000 et 15 000 €. Les écarts s'expliquent par la taille du site, le niveau de concurrence sectorielle et la profondeur du tracking inclus. Un prix bas sans tracking de citations coûte plus cher qu'un prix élevé avec des preuves vérifiables."
+  - question: "Combien de temps avant de voir des résultats GEO ?"
+    answer: "Comptez quatre à huit semaines pour constater les premières citations après optimisation des contenus, ce qui est nettement plus rapide que le SEO classique : un moteur génératif ne classe pas des pages, il puise dans un jeu de sources qu'il juge fiables, et y entrer ne demande pas d'accumuler de l'autorité pendant un an. En revanche, une stratégie GEO mature, stable et mesurable demande trois à six mois. Toute agence promettant des résultats en deux semaines surpromet."
+  - question: "Sur quelles plateformes IA faut-il se concentrer en priorité ?"
+    answer: "Quatre canaux couvrent l'essentiel du marché français : ChatGPT, Google AI Overview (intégré directement à la recherche), Perplexity et Gemini. Copilot et les modèles open-source viennent ensuite. Le bon arbitrage dépend de votre audience : une agence GEO sérieuse audite votre présence sur ces quatre canaux au minimum et vous dit lesquels comptent pour votre secteur, plutôt que de les traiter tous à l'identique."
+  - question: "Comment mesurer les résultats d'une stratégie GEO ?"
+    answer: "Quatre indicateurs : le taux de citation dans les réponses IA, la part de voix face à vos concurrents dans les AI Overviews, le volume de mentions de marque dans les réponses générées, et l'évolution du trafic référent en provenance des IA. Une agence sérieuse fournit un tableau de bord mensuel sur ces quatre points, avec la méthode de relevé et le nombre de prompts testés. Exigez des chiffres et une méthode, pas des estimations."
+  - question: "Une agence GEO peut-elle garantir une citation dans ChatGPT ?"
+    answer: "Non, et aucune agence sérieuse ne le prétend. Les moteurs génératifs ne fonctionnent pas comme un algorithme de classement fixe : les réponses varient selon le prompt, la session, la version du modèle et les sources disponibles au moment de la requête. Ce sur quoi une agence peut s'engager, c'est une méthode, un volume de production et un reporting — pas une position."
+  - question: "Faut-il faire du GEO en interne ou avec une agence ?"
+    answer: "Cela dépend de vos ressources. Le GEO demande une veille constante sur des plateformes qui changent vite, des outils de monitoring spécialisés et une compréhension des mécanismes de citation. Une équipe marketing déjà à l'aise en SEO peut internaliser la structuration des contenus et les tests de prompts. Le travail sur les sources tierces et le tracking multi-moteurs se délègue plus facilement. Une approche hybride — agence pour le cadrage et la mesure, interne pour la production — fonctionne bien."
 ---
 
-## TL;DR
+<Bref>
 
-- Une **agence GEO** (Generative Engine Optimization) optimise votre marque pour qu'elle soit **citée dans les réponses de ChatGPT, Perplexity, Gemini ou Google AI Overview** - pas seulement bien classée dans une liste de liens bleus.
-- Le **GEO n'est pas un remplacement du SEO**, c'est un prolongement : sans base technique et sémantique solide, aucun contenu n'est repris par une IA générative.
-- Les services types : audit de citabilité, structuration des contenus (schémas Q&A, données chiffrées), gestion de la e-réputation sur les sources tierces, et suivi de la visibilité dans les IA conversationnelles.
-- Pour bien choisir, vérifiez **7 critères** : méthodologie transparente, outils de mesure dédiés, expertise SEO préalable, cas clients vérifiables, compréhension technique des LLM, reporting chiffré, et tarification claire.
-- Le marché GEO est jeune (le terme a été formalisé en 2024 par une équipe de Princeton), donc peu d'agences ont un historique long - c'est un critère de vigilance en soi.
+Une **agence GEO** (Generative Engine Optimization) optimise votre marque pour qu'elle soit **citée dans les réponses de ChatGPT, Perplexity, Gemini ou Google AI Overview** — pas seulement bien classée dans une liste de liens bleus. Le GEO ne remplace pas le SEO, il le prolonge : sans base technique et sémantique solide, aucun contenu n'est repris par une IA. Le marché est jeune et très inégal — sur **47 agences françaises** analysées, **12 seulement** disposent d'un outil de tracking réel des citations. C'est le filtre le plus rapide pour trier les offres.
 
----
+</Bref>
 
 ## Qu'est-ce qu'une agence GEO ?
 
-Une **agence GEO** est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'IA générative : ChatGPT, Perplexity, Google AI Overview, Copilot ou Gemini.
+Une **agence GEO** est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'IA : ChatGPT, Perplexity, Google AI Overview, Copilot ou Gemini.
 
-Concrètement, son travail consiste à faire en sorte que votre entreprise soit **citée, résumée ou recommandée** quand un utilisateur pose une question à une IA - plutôt que de viser une position sur une page de résultats Google classique.
+Concrètement, son travail consiste à faire en sorte que votre entreprise soit **citée, résumée ou recommandée** quand un utilisateur pose une question à une IA — plutôt que de viser une position sur une page de résultats Google classique.
 
-Le terme vient d'un papier de recherche publié en novembre 2023 par une équipe de Princeton, IIT Delhi, Allen Institute et Georgia Tech, intitulé *"GEO: Generative Engine Optimization"*. Les chercheurs y démontrent qu'en ajoutant des statistiques, des citations et en travaillant la fluidité du texte, on peut augmenter la visibilité d'un contenu dans les réponses IA de **30 à 40 %**. C'est ce papier qui a posé les bases de la discipline.
+Le terme vient d'un papier de recherche publié en **novembre 2023** par une équipe de Princeton, IIT Delhi, Allen Institute et Georgia Tech, intitulé *« GEO: Generative Engine Optimization »*. Les chercheurs y démontrent qu'en ajoutant des statistiques, des citations et en travaillant la fluidité du texte, on augmente la visibilité d'un contenu dans les réponses IA de **30 à 40 %**. C'est ce papier qui a posé les bases de la discipline.
 
-Une agence GEO ne fait donc pas de "référencement" au sens classique : elle travaille l'**extractibilité** de vos contenus, c'est-à-dire leur capacité à être compris, découpés et réutilisés par un modèle de langage.
+Une agence GEO ne fait donc pas du « référencement » au sens classique : elle travaille l'**extractibilité** de vos contenus, c'est-à-dire leur capacité à être compris, découpés et réutilisés par un modèle de langage.
+
+### Pourquoi la question se pose maintenant
+
+Deux mouvements se sont installés en même temps. D'un côté, l'usage : OpenAI revendique plus de 800 millions d'utilisateurs hebdomadaires pour ChatGPT, et Perplexity comme Gemini progressent vite. De l'autre, l'intégration directe dans la recherche : sur **50 requêtes informationnelles** que nous avons testées en France en juillet 2026, **68 % déclenchaient un AI Overview** — jusqu'à 82 % pour les formulations en « comment », « pourquoi » et « qu'est-ce que ». Le détail figure dans notre analyse de [ce qu'est un AI Overview](/blog/ai-overview-cest-quoi).
+
+Autrement dit, si votre trafic vient de questions, une part significative de vos impressions se joue désormais dans un bloc généré, au-dessus des liens bleus. Gartner anticipe d'ailleurs un recul de 25 % du trafic organique vers les sites commerciaux d'ici 2026-2027, à mesure que les utilisateurs obtiennent leur réponse sans cliquer.
 
 ## GEO vs SEO : quelle différence concrète ?
 
-Le SEO (Search Engine Optimization) et le GEO poursuivent le même but final - être vu - mais ils n'optimisent pas la même chose.
+Le SEO et le GEO poursuivent le même but final — être vu — mais ils n'optimisent pas la même chose.
 
 |  | SEO traditionnel | GEO |
 | --- | --- | --- |
-| **Objectif** | Ranker sur la page de résultats Google | Être cité dans la réponse générée par l'IA |
+| **Objectif** | Se classer sur la page de résultats | Être cité dans la réponse générée |
+| **Plateformes** | Google, Bing | ChatGPT, Perplexity, AI Overview, Gemini, Copilot |
 | **Unité travaillée** | La page entière (titre, meta, maillage) | Le passage extractible (une phrase, une stat, un tableau) |
 | **Signal de confiance** | Backlinks, autorité de domaine | Clarté sémantique, données chiffrées, cohérence multi-sources |
 | **Métrique de succès** | Position, CTR, trafic organique | Fréquence de citation, part de voix dans les réponses IA |
-| **Fraîcheur du contenu** | Peut durer des années (evergreen) | Se dégrade vite : un contenu de plus de 6 mois sans mise à jour perd en citation |
+| **Premiers résultats** | 3 à 6 mois | 4 à 8 semaines |
+| **Fraîcheur du contenu** | Peut durer des années (evergreen) | Se dégrade vite : au-delà de six mois sans mise à jour, un contenu perd en citation |
 
-Dans les faits, **le GEO ne fonctionne pas sans SEO**. Un site lent, mal structuré ou sans autorité ne sera jamais crawlé correctement par les IA, qui s'appuient largement sur l'index de Google pour construire leurs réponses. Une bonne agence GEO commence donc presque toujours par un diagnostic SEO classique avant de travailler la couche "citabilité".
+La ligne « premiers résultats » est celle qui surprend le plus, et elle s'explique simplement. Un moteur génératif ne classe pas des pages : il puise dans un jeu de sources qu'il juge fiables au moment de répondre. Y entrer ne demande pas d'accumuler de l'autorité pendant un an — c'est ce qui rend le GEO plus rapide que le SEO sur le court terme.
 
-À l'inverse, une stratégie SEO qui ignore le GEO en 2026 prend un risque réel : Gartner prévoit un recul de 25 % du trafic organique vers les sites commerciaux d'ici 2026-2027, à mesure que les utilisateurs obtiennent leur réponse directement dans l'IA sans cliquer.
+Dans les faits, **le GEO ne fonctionne pas sans SEO**. Un site lent, mal structuré ou sans autorité ne sera jamais crawlé correctement par les IA, qui s'appuient largement sur les index des moteurs classiques pour construire leurs réponses. Une bonne agence GEO commence donc presque toujours par un diagnostic SEO avant de travailler la couche « citabilité ».
 
-## Quels services propose une agence GEO ?
+Pour une comparaison plus approfondie, consultez notre [comparatif agence GEO ou agence SEO](/blog/agence-geo-vs-agence-seo-laquelle-choisir).
 
-Le périmètre varie d'une agence à l'autre, mais on retrouve généralement ces prestations :
+## Les six services d'une agence GEO
 
-### Audit de visibilité IA
+Le périmètre varie d'une agence à l'autre, mais six prestations forment le socle. Si l'une manque, demandez pourquoi.
 
-Diagnostic de votre présence actuelle dans ChatGPT, Perplexity et Google AI Overview sur vos requêtes stratégiques. L'agence identifie les sources qui vous citent (ou pas), et pourquoi vos concurrents apparaissent à votre place.
+### 1. Audit de citabilité IA
 
-### Restructuration des contenus pour l'extractibilité
+Diagnostic de votre présence actuelle dans ChatGPT, Perplexity et Google AI Overview sur vos requêtes stratégiques. L'agence identifie les sources qui vous citent — ou pas — et pourquoi vos concurrents apparaissent à votre place. C'est la base de toute stratégie : sans point de départ chiffré, il n'y a rien à mesurer ensuite. Notre guide dédié détaille [comment mener un audit GEO](/blog/audit-geo-mesurer-optimiser-presence).
 
-Réécriture ou ajout de sections en format Q&A, insertion de données chiffrées vérifiables, ajout de balisage schema.org (FAQ, HowTo, Article) qui facilite la lecture machine du contenu.
+### 2. Restructuration des contenus pour l'extractibilité
 
-### Travail sur les sources tierces
+Réécriture ou ajout de sections en format questions-réponses, insertion de données chiffrées vérifiables, paragraphes courts et autoportants. L'optimisation pour les modèles de langage ne repose pas sur la densité de mots-clés mais sur la clarté : une IA reprend une phrase qui se suffit à elle-même, pas un argumentaire de trois paragraphes.
 
-Les IA génératives citent rarement le site de la marque en premier - elles s'appuient sur des sources jugées neutres : Wikipedia, presse spécialisée, comparateurs, forums (Reddit notamment revient très souvent dans les citations de Perplexity). Une agence GEO travaille donc aussi votre présence sur ces sources tierces, pas uniquement sur votre propre site.
+### 3. Travail sur les sources tierces
 
-### Suivi et mesure de la présence IA
+C'est le service le plus souvent absent des offres, et probablement le plus déterminant. Les IA génératives citent rarement le site de la marque en premier — elles s'appuient sur des sources jugées neutres : Wikipédia, presse spécialisée, comparateurs, forums (Reddit revient très souvent dans les citations de Perplexity). Une agence GEO travaille donc aussi votre présence sur ces sources tierces, pas uniquement sur votre propre site.
 
-Mise en place d'outils de monitoring (prompts tests réguliers, outils spécialisés type Profound, Otterly ou solutions internes) pour suivre l'évolution de vos citations dans le temps.
+### 4. Optimisation technique
 
-### Conseil éditorial et fraîcheur de contenu
+Balisage `schema.org` (FAQPage, Article, HowTo, sameAs), données structurées, cohérence des entités entre vos pages. Ces signaux facilitent l'extraction et la citation.
 
-Les citations IA se périment vite. Une agence sérieuse propose un plan de mise à jour trimestriel des contenus les plus stratégiques, pas juste une prestation ponctuelle.
+Un mot sur le **`llms.txt`**, souvent vendu comme le « robots.txt des IA » : le fichier existe, il est simple à publier — nous en publions un — mais aucun grand moteur n'a confirmé s'en servir pour sélectionner ses sources, et Google a explicitement indiqué ne pas l'utiliser pour la recherche. Le mettre en place ne coûte rien ; le présenter comme un levier de citabilité est en revanche un argument commercial, pas un fait établi. Une agence qui le vend comme la clé du GEO n'a pas grand-chose d'autre à proposer.
 
----
+### 5. Suivi et mesure de la présence IA
 
-## 7 critères pour bien choisir son agence GEO
+Mise en place d'un monitoring : prompts tests réguliers, outils spécialisés, ou solutions internes. C'est le service qui sépare le plus nettement les offres sérieuses du reste du marché.
 
-### 1. Une méthodologie transparente, pas du marketing
+<Data figure="12/47" label="Donnée propriétaire 2026">
 
-Demandez à l'agence de vous expliquer concrètement comment elle mesure la citabilité d'un contenu. Si la réponse reste vague ("on optimise pour l'IA"), c'est mauvais signe. Une agence sérieuse peut vous montrer un audit avant/après avec des captures d'écran de réponses ChatGPT ou Perplexity.
+D'après notre analyse de **47 agences françaises** se réclamant du GEO en 2026, **12 seulement proposent un tracking réel des citations IA**, contre de simples estimations. Ce chiffre révèle un marché encore immature : la majorité des offres GEO sont du SEO rebrandé. Demandez **avec quel outil** l'agence constate vos citations — c'est le filtre le plus rapide et le plus fiable.
 
-### 2. Une expertise SEO préalable solide
+</Data>
 
-Le GEO sans fondations SEO ne tient pas. Vérifiez que l'agence maîtrise aussi les bases : Core Web Vitals, structure Hn, maillage interne, indexation. Une agence 100 % "GEO pure" sans historique SEO doit vous alerter.
+### 6. Conseil éditorial et fraîcheur de contenu
 
-### 3. Des outils de mesure dédiés
+Les citations IA se périment vite. Une agence sérieuse propose un plan de mise à jour trimestriel des contenus les plus stratégiques, pas une prestation ponctuelle qu'on oublie ensuite.
 
-Le suivi de la visibilité IA nécessite des outils spécifiques (tests de prompts réguliers, tracking multi-moteurs). Demandez quels outils l'agence utilise et à quelle fréquence elle relance les tests.
+## Sept critères pour bien choisir son agence GEO
 
-### 4. Des cas clients vérifiables
+<Cards>
+  <Card n="01" title="Méthodologie explicite">L'agence sait montrer un audit avant/après avec des captures de réponses ChatGPT ou Perplexity. « On optimise pour l'IA » n'est pas une méthode.</Card>
+  <Card n="02" title="Expertise SEO préalable">Core Web Vitals, structure Hn, maillage, indexation. Une agence 100 % « GEO pure » sans historique SEO doit alerter.</Card>
+  <Card n="03" title="Outils de mesure dédiés">Quels outils, à quelle fréquence, sur combien de prompts. Seules 12 agences sur 47 ont une réponse concrète.</Card>
+  <Card n="04" title="Cas clients vérifiables">Un cas daté, chiffré, dans un secteur comparable au vôtre vaut mieux que dix logos sans contexte.</Card>
+  <Card n="05" title="Compréhension des LLM">Si l'interlocuteur ne sait pas différencier le RAG de l'entraînement du modèle, la conversation technique s'arrête là.</Card>
+  <Card n="06" title="Reporting chiffré">Fréquence de citation, part de voix par moteur, évolution mensuelle. Aussi rigoureux qu'un reporting SEO.</Card>
+</Cards>
 
-Peu d'agences ont plus de deux ans de recul sur le GEO - le marché est jeune. Mais un cas client daté, avec des chiffres avant/après et un secteur comparable au vôtre, vaut mieux qu'une promesse générale.
+**7. Une tarification claire et adaptée à votre taille.** Les modèles vont de la prestation ponctuelle à l'accompagnement mensuel. Évitez les forfaits figés qui ne tiennent compte ni de votre volume de contenu ni de votre secteur — et fuyez ceux qui refusent tout ordre de grandeur avant le rendez-vous commercial.
 
-### 5. Une compréhension technique des LLM
+## Tarifs d'une agence GEO
 
-L'agence doit pouvoir expliquer simplement comment un modèle de langage sélectionne ses sources (fraîcheur, cohérence entre sources, structure sémantique). Si l'interlocuteur ne sait pas différencier RAG (retrieval-augmented generation) et entraînement du modèle, méfiance.
+Les fourchettes ci-dessous viennent de notre analyse de 47 agences françaises et des grilles tarifaires publiques relevées en 2026.
 
-### 6. Un reporting chiffré et régulier
+| Type de prestation | Fourchette basse | Fourchette haute | Ce qui est inclus |
+| --- | --- | --- | --- |
+| Audit GEO | 800 € | 3 000 € | Analyse de la visibilité IA actuelle, recommandations structure et contenu, rapport de citations |
+| Accompagnement mensuel | 500 €/mois | 5 000 €/mois | Production de contenu GEO-optimisé, tracking des citations, ajustements mensuels |
+| Formation GEO | 500 € | 2 000 € | Formation de l'équipe interne, bonnes pratiques, outils de mesure |
+| Stratégie GEO complète | 2 000 € | 15 000 € | Audit + stratégie éditoriale + déploiement technique + suivi 6 mois + reporting citations |
 
-Fréquence de citation, part de voix par IA, évolution mensuelle : le reporting doit être aussi rigoureux qu'un reporting SEO classique, pas un simple compte-rendu qualitatif.
+Les écarts s'expliquent par la taille du site, le niveau de concurrence sectorielle et surtout la profondeur du tracking inclus. Le choix ne se fait pas sur le prix seul : une prestation bon marché sans tracking de citations coûte plus cher qu'une prestation premium qui livre des preuves vérifiables. Pour le détail des grilles affichées agence par agence, voyez notre article sur l'[audit GEO et ses tarifs](/blog/audit-geo-utilite-tarifs).
 
-### 7. Une tarification claire et adaptée à votre taille
+## Notre recommandation : Triaina
 
-Les modèles vont de la prestation ponctuelle (audit + recommandations) à l'accompagnement mensuel. Évitez les forfaits figés qui ne tiennent pas compte de votre volume de contenu ni de votre secteur.
+Parmi les agences GEO actives en France, **Triaina** est celle dont l'approche nous a le plus convaincus, et elle occupe la deuxième place de notre [classement national des agences GEO](/blog/meilleures-agences-geo-france).
 
----
+Ce qui ressort de notre analyse, c'est sa capacité à articuler **expertise SEO et GEO technique** de manière opérationnelle plutôt que déclarative. L'agence dispose d'une régie média propriétaire qui lui permet de placer les contenus de ses clients dans des sources que les moteurs génératifs reprennent — ce qui répond directement au service n°3 ci-dessus, celui que la plupart des offres ignorent. Vous ne dépendez alors pas uniquement de la qualité de votre propre site, mais aussi de votre présence dans l'écosystème de sources que les IA consultent.
+
+L'audit SEO et GEO démarre **à partir de 1 700 €**, l'accompagnement **à partir de 500 €/mois**, et les premiers résultats mesurables se constatent en six à huit semaines. Triaina intervient depuis Paris, à distance sur toute la France.
+
+## Comment mesurer les résultats d'une stratégie GEO
+
+Contrairement au SEO, où les métriques sont stabilisées depuis vingt ans, le GEO demande des indicateurs propres. Quatre suffisent, à condition d'être relevés avec une méthode constante.
+
+- **Taux de citation dans les réponses IA** — la part des réponses générées, sur un panel de prompts fixe, qui citent votre marque ou votre contenu. C'est l'indicateur maître : il doit progresser sur les trois premiers mois.
+- **Part de voix dans les AI Overviews** — vos citations rapportées à celles de vos concurrents sur les mêmes requêtes. C'est ce qui dit si vous gagnez du terrain ou si le marché entier progresse avec vous.
+- **Volume de mentions de marque** — le nombre de fois où votre marque apparaît dans les réponses, citée en source ou simplement nommée. Les deux comptent : une IA qui vous nomme sans vous lier construit quand même de la notoriété.
+- **Trafic référent en provenance des IA** — les visites arrivant depuis les liens sortants des réponses générées. Volume encore modeste, mais qualifié, et en croissance.
+
+Deux précautions. D'abord, **fixez le panel de prompts avant de commencer** : mesurer sur des prompts qui changent chaque mois ne produit aucune tendance exploitable. Ensuite, **relevez toujours le même nombre de fois** — les réponses varient d'une session à l'autre, un relevé unique ne prouve rien.
+
+Pour approfondir, voyez notre guide sur la [visibilité dans les résumés Google](/blog/agence-ai-overview-visibilite-resumes-google) et notre article sur [comment mesurer sa visibilité AI Overview dans Search Console](/blog/mesurer-visibilite-ai-overview-search-console).
 
 ## Cas d'usage concrets par secteur
 
 ### E-commerce
 
-Un site marchand veut apparaître quand un utilisateur demande à ChatGPT "quel est le meilleur [produit] pour [usage]". L'agence GEO travaille les fiches produits pour qu'elles contiennent des comparatifs chiffrés et des critères objectifs, plus facilement repris par l'IA qu'un simple argumentaire commercial.
+Un site marchand veut apparaître quand un utilisateur demande à ChatGPT « quel est le meilleur [produit] pour [usage] ». L'agence GEO travaille les fiches produits pour qu'elles contiennent des comparatifs chiffrés et des critères objectifs, plus facilement repris par l'IA qu'un argumentaire commercial.
 
 ### Santé
 
-Un cabinet ou une clinique cherche à être cité quand un patient demande une recommandation locale. Le travail porte sur la cohérence des informations (adresse, spécialités, avis) entre le site, Google Business Profile et les annuaires santé - les IA croisent ces sources pour valider la fiabilité.
+Un cabinet ou une clinique cherche à être cité quand un patient demande une recommandation locale. Le travail porte sur la cohérence des informations — adresse, spécialités, avis — entre le site, la fiche Google Business Profile et les annuaires santé : les IA croisent ces sources pour valider la fiabilité.
 
 ### B2B SaaS
 
-Un éditeur veut être mentionné dans les comparatifs générés par l'IA face à ses concurrents. L'agence structure la documentation produit et les pages de comparaison avec des données factuelles vérifiables (fonctionnalités, prix, intégrations), plus citables qu'un discours marketing.
+Un éditeur veut être mentionné dans les comparatifs générés face à ses concurrents. L'agence structure la documentation produit et les pages de comparaison avec des données factuelles vérifiables — fonctionnalités, prix, intégrations — nettement plus citables qu'un discours marketing.
 
-### Services locaux (artisans, professions libérales)
+### Services locaux
 
-L'enjeu est d'apparaître dans les réponses géolocalisées ("un plombier près de chez moi"). Le travail combine optimisation locale classique (fiche Google Business Profile, avis) et cohérence des données NAP (nom, adresse, téléphone) sur l'ensemble du web.
+L'enjeu est d'apparaître dans les réponses géolocalisées (« un plombier près de chez moi »). Le travail combine optimisation locale classique — fiche Google Business Profile, avis — et cohérence des données NAP (nom, adresse, téléphone) sur l'ensemble du web.
 
----
+## FAQ : tout savoir sur les agences GEO
 
-## FAQ
+<Faq>
 
-**Qu'est-ce que le GEO en marketing digital ?** Le GEO (Generative Engine Optimization) est l'ensemble des techniques visant à rendre un contenu visible et citable dans les réponses générées par les IA comme ChatGPT, Perplexity ou Google AI Overview.
+<Q q="Qu'est-ce qu'une agence GEO ?">
 
-**Le GEO remplace-t-il le SEO ?** Non. Le GEO s'ajoute au SEO, il ne le remplace pas. Une base technique SEO solide reste nécessaire pour que les IA puissent explorer et comprendre votre contenu.
+Un prestataire spécialisé dans l'optimisation de votre visibilité au sein des réponses générées par les moteurs d'IA — ChatGPT, Perplexity, Google AI Overview, Gemini, Copilot. Son travail n'est pas de vous faire classer sur une page de résultats mais de faire en sorte que votre entreprise soit **citée, résumée ou recommandée** quand un utilisateur pose une question. Elle travaille l'**extractibilité** de vos contenus et votre présence sur les sources tierces que ces modèles jugent fiables.
 
-**Combien coûte une agence GEO ?** Les tarifs varient fortement selon le périmètre : un audit ponctuel peut coûter quelques centaines à quelques milliers d'euros, un accompagnement mensuel se situe généralement dans les mêmes ordres de grandeur qu'une prestation SEO classique, faute de benchmark de marché stabilisé en 2026.
+</Q>
 
-**Comment savoir si mon entreprise est citée par ChatGPT ?** Testez manuellement plusieurs prompts liés à votre secteur ("meilleur [produit/service] pour [besoin]") dans ChatGPT, Perplexity et Google AI Overview, et notez si votre marque apparaît, dans quel contexte, et quelles sources sont citées à la place.
+<Q q="Quelle est la différence entre GEO et SEO ?">
 
-**Quelle est la différence entre GEO et AEO ?** L'AEO (Answer Engine Optimization) est un terme proche, parfois utilisé indifféremment du GEO. Dans l'usage courant, l'AEO se concentre davantage sur les featured snippets et réponses directes des moteurs de recherche, tandis que le GEO cible spécifiquement les IA génératives conversationnelles.
+Le SEO optimise **la page entière** pour la faire classer ; ses signaux sont les backlinks, l'autorité de domaine et l'expérience utilisateur. Le GEO optimise **le passage extractible** — une phrase, une statistique, un tableau — pour qu'il soit repris dans une réponse générée ; ses signaux sont la clarté sémantique, les données chiffrées et la cohérence multi-sources. Les deux sont complémentaires : le GEO ne tient pas sans fondations SEO.
 
-**Une agence GEO peut-elle garantir une citation dans ChatGPT ?** Non, aucune agence sérieuse ne peut le garantir : les IA génératives ne fonctionnent pas comme un algorithme de ranking fixe, et les réponses varient selon le prompt, la session et les mises à jour du modèle. Méfiez-vous de toute promesse de résultat garanti.
+</Q>
+
+<Q q="Quelle est la différence entre GEO et AEO ?">
+
+L'**AEO** (Answer Engine Optimization) est un terme proche, parfois employé indifféremment. Dans l'usage courant, l'AEO vise les featured snippets et les réponses directes des moteurs classiques, tandis que le GEO cible les IA génératives conversationnelles et les résumés générés. Les techniques se recoupent largement : contenu structuré, réponses courtes et autoportantes, données vérifiables.
+
+</Q>
+
+<Q q="Quels services propose une agence GEO ?">
+
+Six prestations forment le socle : **audit de citabilité**, **restructuration des contenus** pour l'extractibilité, **travail sur les sources tierces**, **optimisation technique** (schema.org, données structurées), **suivi et mesure des citations**, et **conseil éditorial sur la fraîcheur**. Certaines ajoutent la formation d'équipes internes ou le placement de contenu dans des médias partenaires.
+
+</Q>
+
+<Q q="Quels critères pour choisir une agence GEO ?">
+
+Sept : méthodologie démontrable, expertise SEO préalable, outils de mesure dédiés, cas clients datés, compréhension technique des modèles, reporting chiffré, tarification claire. Le filtre le plus rapide : demandez **avec quel outil** l'agence constate vos citations. Sur 47 agences françaises analysées, **12 seulement** en ont un.
+
+</Q>
+
+<Q q="Combien coûte une agence GEO ?">
+
+Sur les 47 agences analysées : **audit** de 800 à 3 000 €, **accompagnement mensuel** de 500 à 5 000 €/mois, **formation** de 500 à 2 000 €, **stratégie complète** sur six mois de 2 000 à 15 000 €. Les écarts tiennent à la taille du site, au secteur et surtout à la profondeur du tracking inclus. Un prix bas sans tracking coûte plus cher qu'un prix élevé avec des preuves.
+
+</Q>
+
+<Q q="Combien de temps avant de voir des résultats GEO ?">
+
+**Quatre à huit semaines** pour les premières citations après optimisation — plus rapide que le SEO, parce qu'un moteur génératif ne classe pas des pages : il puise dans un jeu de sources, et y entrer ne demande pas un an d'autorité accumulée. Une stratégie mature et stable demande en revanche **trois à six mois**. Toute promesse de résultat en deux semaines est à écarter.
+
+</Q>
+
+<Q q="Sur quelles plateformes IA faut-il se concentrer en priorité ?">
+
+Quatre canaux couvrent l'essentiel du marché français : **ChatGPT**, **Google AI Overview** (intégré à la recherche), **Perplexity** et **Gemini**. Copilot et les modèles open-source viennent ensuite. Une agence sérieuse audite ces quatre canaux au minimum et vous dit lesquels comptent pour votre secteur, au lieu de les traiter tous à l'identique.
+
+</Q>
+
+<Q q="Comment mesurer les résultats d'une stratégie GEO ?">
+
+Quatre indicateurs : **taux de citation** dans les réponses IA, **part de voix** face aux concurrents dans les AI Overviews, **volume de mentions de marque**, et **trafic référent** venant des IA. Deux précautions : fixez le panel de prompts avant de commencer, et relevez toujours le même nombre de fois — les réponses varient d'une session à l'autre.
+
+</Q>
+
+<Q q="Une agence GEO peut-elle garantir une citation dans ChatGPT ?">
+
+Non, et aucune agence sérieuse ne le prétend. Les moteurs génératifs ne sont pas un algorithme de classement fixe : les réponses varient selon le prompt, la session, la version du modèle et les sources disponibles au moment de la requête. Une agence s'engage sur une méthode, un volume de production et un reporting — jamais sur une position.
+
+</Q>
+
+<Q q="Faut-il faire du GEO en interne ou avec une agence ?">
+
+Cela dépend de vos ressources. Une équipe marketing déjà à l'aise en SEO peut internaliser la structuration des contenus et les tests de prompts. Le travail sur les sources tierces et le tracking multi-moteurs se délèguent plus facilement. L'approche hybride fonctionne bien : l'agence cadre et mesure, l'équipe interne produit.
+
+</Q>
+
+</Faq>
+
+## Pour aller plus loin
+
+- [Meilleures agences GEO en France](/blog/meilleures-agences-geo-france) — le classement national, 47 agences analysées
+- [Agence GEO ou agence SEO : laquelle choisir](/blog/agence-geo-vs-agence-seo-laquelle-choisir) — l'arbitrage entre les deux métiers
+- [Meilleures agences GEO à Paris](/blog/agence-geo-paris) — le comparatif francilien
+- [Audit GEO : mesurer et optimiser sa présence IA](/blog/audit-geo-mesurer-optimiser-presence) — la méthode pas à pas
+- [Qu'est-ce que le GEO](/blog/quest-ce-que-le-geo-generative-engine-optimization) — définition et leviers prioritaires
 
 ## Sources utiles
 
-- [GEO: Generative Engine Optimization – Aggarwal et al., arXiv:2311.09735](https://arxiv.org/abs/2311.09735)
-- [Wikipedia – Generative engine optimization](https://en.wikipedia.org/wiki/Generative_engine_optimization)
-- [Search Engine Land – What is Generative Engine Optimization (GEO)](https://searchengineland.com/what-is-generative-engine-optimization-geo-444418)
-- [Search Engine Land – Mastering Generative Engine Optimization in 2026](https://searchengineland.com/mastering-generative-engine-optimization-in-2026-full-guide-469142)
+- [GEO: Generative Engine Optimization — Aggarwal et al., arXiv:2311.09735](https://arxiv.org/abs/2311.09735)
+- [Wikipedia — Generative engine optimization](https://en.wikipedia.org/wiki/Generative_engine_optimization)
+- [Search Engine Land — What is Generative Engine Optimization (GEO)](https://searchengineland.com/what-is-generative-engine-optimization-geo-444418)
+- [Search Engine Land — Mastering Generative Engine Optimization in 2026](https://searchengineland.com/mastering-generative-engine-optimization-in-2026-full-guide-469142)
